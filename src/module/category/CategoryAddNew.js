@@ -1,7 +1,4 @@
-import { async } from "@firebase/util";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { number } from "prop-types";
-
+import { addDoc, collection } from "firebase/firestore";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
@@ -12,17 +9,16 @@ import Field from "../../components/field/Field";
 import Input from "../../components/input/Input";
 import Label from "../../components/label/Label";
 import Radio from "../../components/radio/Radio";
-import { useAuth } from "../../contexts/AuthContexts";
 import { db } from "../../firebase-app/firebaseconfig";
 import Heading from "../../Layout/Heading";
-import { categoryStatus, userRole } from "../../utils/constants";
+import { categoryStatus } from "../../utils/constants";
 const CategoryAddNew = () => {
   const {
     control,
     handleSubmit,
     watch,
     reset,
-    formState: { isValid, isSubmitting },
+    formState: { isSubmitting },
   } = useForm({
     mode: "onChange",
     defaultValues: {
@@ -31,7 +27,6 @@ const CategoryAddNew = () => {
       status: 1,
     },
   });
-  const { userInfo } = useAuth();
   const handleAddNewCategory = async (values) => {
     const cloneValues = { ...values };
     cloneValues.slug = slugify(

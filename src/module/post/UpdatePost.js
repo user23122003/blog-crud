@@ -58,7 +58,6 @@ const UpdatePost = () => {
   const [params] = useSearchParams();
   const postId = params.get("id");
   const [content, setContent] = useState("");
-  const result = [];
   useEffect(() => {
     async function getData() {
       const colRef = collection(db, "category");
@@ -79,10 +78,6 @@ const UpdatePost = () => {
       reset(singleDoc.data());
       setImage(singleDoc.data().image);
       setContent(singleDoc.data()?.content || "");
-      console.log(
-        "🚀 ~ file: UpdatePost.js ~ line 87 ~ fetchData ~ singleDoc.data()",
-        singleDoc.data()
-      );
     }
     fetchData();
   }, [postId, reset]);
@@ -99,9 +94,7 @@ const UpdatePost = () => {
       imageUploader: {
         // imgbbAPI
         upload: async (file) => {
-          console.log("upload: ~ file", file);
           const bodyFormData = new FormData();
-          console.log("upload: ~ bodyFormData", bodyFormData);
           bodyFormData.append("image", file);
           const response = await axios({
             method: "post",
@@ -140,10 +133,6 @@ const UpdatePost = () => {
           ...cloneValues,
           content,
         });
-        console.log(
-          "🚀 ~ file: UpdatePost.js ~ line 117 ~ updatePost ~ cloneValues",
-          cloneValues
-        );
         Swal.fire("Succes!", "Đã xong bạn nha.", "success");
         navigate("/post/history");
       }
@@ -165,16 +154,12 @@ const UpdatePost = () => {
         const progressPercent =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setProgress(progressPercent);
-        console.log("Upload is " + progressPercent + "% done");
         switch (snapshot.state) {
           case "paused":
-            console.log("Upload is paused");
             break;
           case "running":
-            console.log("Upload is running");
             break;
           default:
-            console.log("Success");
         }
       },
       (error) => {
@@ -186,12 +171,10 @@ const UpdatePost = () => {
           case "storage/unknown":
             break;
           default:
-            console.log("Error");
         }
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
           setImage(downloadURL);
         });
       }
@@ -211,15 +194,10 @@ const UpdatePost = () => {
       id: docData.id,
       ...docData.data(),
     });
-    console.log(
-      "🚀 ~ file: UpdatePost.js ~ line 184 ~ handlerCategory ~ docData.data()",
-      docData.data()
-    );
     setCategoryDetails(item);
     setShow(true);
     setSelected(index);
   };
-
   return (
     <form
       onSubmit={handleSubmit(updatePost)}

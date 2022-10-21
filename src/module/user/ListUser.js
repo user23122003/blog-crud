@@ -19,9 +19,8 @@ import { db } from "../../firebase-app/firebaseconfig";
 import Heading from "../../Layout/Heading";
 import Table from "../../Layout/Table";
 import LabelStatus from "../../components/label/LabelStatus";
-
 import { userRole, userStatus } from "../../utils/constants";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { debounce } from "lodash";
 import Button from "../../components/button/Button";

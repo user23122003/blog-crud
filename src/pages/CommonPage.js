@@ -2,9 +2,12 @@ import React from "react";
 
 const CommonPage = ({ children }) => {
   return (
-    <div className="p-6 rounded-lg w-[500px] shadow-xl  mx-auto mt-20 bg-bg-secondary">
+    <div
+      className="p-6 rounded-lg md:max-w-[500px] sm:max-w-[380px] shadow-xl  
+    mx-auto mt-20 bg-bg-secondary"
+    >
       <h1 className="font-medium text-text-color text-lg text-center p-4">
-        Chào mừng bạn đã đến đây :D
+        Chào mừng đến với blog.
       </h1>
       <div className="w-full flex justify-center items-center p-2">
         <img

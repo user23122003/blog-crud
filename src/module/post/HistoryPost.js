@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ActionDelete from "../../components/action/ActionDelete";
 import ActionEdit from "../../components/action/ActionEdit";
 import ActionView from "../../components/action/ActionView";

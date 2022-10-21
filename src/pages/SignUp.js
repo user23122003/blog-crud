@@ -10,7 +10,7 @@ import { Flip, toast } from "react-toastify";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../firebase-app/firebaseconfig";
 import { useNavigate } from "react-router-dom";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc } from "firebase/firestore";
 import Loading from "../components/loading/Loading";
 import CommonPage from "./CommonPage";
 import { useAuth } from "../contexts/AuthContexts";
@@ -44,7 +44,6 @@ const SignUp = () => {
     await updateProfile(auth.currentUser, {
       displayName: values.username,
     });
-    const colRef = collection(db, "users");
     setDoc(doc(db, "users", auth.currentUser.uid), {
       username: values.username,
       email: values.email,
@@ -60,7 +59,6 @@ const SignUp = () => {
   };
   useEffect(() => {
     if (!userInfo?.email) navigate("/sign-up");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo]);
   useEffect(() => {
     const arrError = Object.values(errors);

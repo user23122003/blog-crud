@@ -8,11 +8,10 @@ import Loading from "../components/loading/Loading";
 import CommonPage from "./CommonPage";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Flip, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-app/firebaseconfig";
 import { useNavigate } from "react-router-dom";
-import { AuthProvider, useAuth, UseAuth } from "../contexts/AuthContexts";
 const schema = yup.object({
   email: yup.string().email("Hãy nhập email").required("Không để trống email"),
   password: yup
@@ -38,10 +37,6 @@ const SignIn = () => {
   };
   useEffect(() => {
     const arrError = Object.values(errors);
-    console.log(
-      "🚀 ~ file: SignIn.js ~ line 46 ~ useEffect ~ arrError",
-      arrError
-    );
     if (arrError.length > 0) {
       toast.error(arrError[0].message, {
         position: "top-center",

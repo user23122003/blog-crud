@@ -3,15 +3,13 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import slugify from "slugify";
-import { Swal } from "sweetalert2/dist/sweetalert2";
-import { useAuth } from "../../contexts/AuthContexts";
+
 import { db } from "../../firebase-app/firebaseconfig";
-import { categoryStatus, userRole } from "../../utils/constants";
+import { categoryStatus } from "../../utils/constants";
 import { toast, Flip } from "react-toastify";
 import Heading from "../../Layout/Heading";
 import Field from "../../components/field/Field";
 import Label from "../../components/label/Label";
-
 import Radio from "../../components/radio/Radio";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
@@ -31,9 +29,7 @@ const CategoryUpdate = () => {
     }
     fetchData();
   }, [categoryId, reset]);
-
   const watchStatus = watch("status");
-
   const handleUpdateCategory = async (values) => {
     // if (userInfo?.role !== userRole.ADMIN) {
     //   Swal.fire("Failed", "You have no right to do this action", "warning");

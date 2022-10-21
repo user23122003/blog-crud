@@ -27,10 +27,7 @@ const UserUpdate = () => {
   useEffect(() => {
     async function fetchData() {
       const colRef = doc(db, "users", userId);
-      console.log(
-        "🚀 ~ file: CategoryUpdate.js ~ line 34 ~ fetchData ~ categoryId",
-        userId
-      );
+
       const singleDoc = await getDoc(colRef);
       reset(singleDoc.data());
     }
