@@ -17,8 +17,8 @@ const Header = () => {
   const { userInfo } = useAuth();
   return (
     <div className="w-full max-w-[1180px] rounded-lg mt-6 mx-auto py-4 px-6 bg-bg-secondary cursor-pointer">
-      <div className="flex items-center">
-        <NavLink to="/" className="w-[100px] h-full">
+      <div className="flex items-center justify-center">
+        <NavLink to="/" className="w-[100px] h-full sm:hidden md:block">
           <img
             className="w-full h-full object-cover"
             src="https://i.imgur.com/nokkfil.png"

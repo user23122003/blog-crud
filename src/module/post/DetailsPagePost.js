@@ -31,12 +31,18 @@ const DetailsPagePost = () => {
   return (
     <>
       <Header></Header>
-      <div className="p-6 flex justify-center">
-        <div className="p-4 w-3/4  mt-6 bg-bg-secondary rounded-lg flex flex-col cursor-pointer">
-          <TextTitle className="font-bold text-2xl my-2 text-center">
+      <div className="md:p-6 sm:p-1 flex justify-center">
+        <div
+          className="md:p-4 md:w-3/4 sm:p-1 sm:w-full mt-6 bg-bg-secondary 
+        rounded-lg flex flex-col cursor-pointer"
+        >
+          <TextTitle className="font-bold text-2xl my-2 text-center text-error">
             {postInfo.title}
           </TextTitle>
-          <div className="p-4 mt-5 w-1/2  bg-text-gray h-[150px] rounded-lg flex justify-cemter gap-5  items-center">
+          <div
+            className="md:p-4 md:mt-5 md:w-1/2 sm:w-full sm:p-2 sm:mt-2
+            bg-text-gray h-[150px] rounded-lg flex justify-cemter gap-5  items-center"
+          >
             <div className="h-[100px] w-[100px] rounded-full ">
               <PostImg className="rounded-full" src={postInfo.image}></PostImg>
             </div>

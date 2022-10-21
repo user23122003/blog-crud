@@ -68,7 +68,7 @@ const NewestPost = () => {
   if (category.length <= 0) return null;
   return (
     <div className="flex p-2 gap-4 md:flex-row sm:flex-col">
-      <div className="w-full h-full rounded-lg flex-1 ">
+      <div className="w-full h-full rounded-lg flex-1">
         <img
           className="h-full w-full object-cover rounded-lg"
           src="https://lh3.googleusercontent.com/oSuGpxGetz3f-FqKRgUaZlpvDg8Eu0SOaAQFKUKVMXhzMxQOANv5ccOTvQ3p93pGkncS_lrKYZNHYsbAJrFXQTQY9A"
@@ -82,25 +82,28 @@ const NewestPost = () => {
           tenetur totam.
         </h3>
       </div>
-      <div className="flex flex-col gap-2 md:w-1/2 sm:w-full cursor-pointer  ">
+      <div className="flex-auto flex-col gap-4 md:w-1/2 sm:w-full cursor-pointer ">
         {post.map((item) => (
           <div
             onClick={() => navigate(`/post/${item.slug}`)}
             className="flex items-center justify-center bg-bg-primary rounded-lg 
-            py-4 px-6 w-full gap-1 "
+            py-4 px-6 w-full gap-1 mb-2"
           >
             <div
               key={item.title}
-              className="md:min-w-[250px] sm:min-w-[130px] cursor-pointer
-               h-[160px] rounded-lg"
+              className="md:min-w-[250px] sm:max-w-[130px] cursor-pointer
+               md:h-[150px] sm:max-h-[120px] rounded-lg"
             >
               <PostImg src={item.image}></PostImg>
             </div>
-            <div className="flex flex-col h-full">
-              <TextTitle className="inline-block px-4 rounded-md bg-bg-secondary text-lg  font-semibold  ">
+            <div className="flex flex-col h-full w-full">
+              <TextTitle
+                className="inline-block md:px-4 sm:p-2 rounded-md
+               bg-bg-secondary md:text-lg sm:text-sm font-semibold  "
+              >
                 {item?.category.name}
               </TextTitle>
-              <TextContent className="p-2 w-full rounded-md text-sm text-primary ">
+              <TextContent className="p-2 w-full rounded-md md:text-sm sm:text-xs text-primary ">
                 {item.title}
               </TextContent>
             </div>
