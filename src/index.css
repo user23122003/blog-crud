@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+:root {
+  --text-blue: #1363ef;
+  --text-color: #fff;
+  --text-gray: #19191f;
+  --bg-primary: #19191f;
+  --bg-secondary: #212429;
+  --bg-dark: #000;
+  --bg-green: #1fa859;
+  --bg-red: #dc2626;
+  --bg-organ: #f97316;
+  --bg-blue: #0891b2;
+  --toastify-font-family: "Poppins", sans-serif;
+}
+
+/* sweetalirt */
+.swal2-icon.swal2-warning {
+  border-color: #f97316 !important;
+  color: #f97316 !important;
+}
+
+.Toastify__toast {
+  background-color: #000 !important;
+  border-radius: 14px !important;
+  font-family: "Poppins", sans-serif !important;
+  padding: 20px !important;
+}
+.Toastify__toast-body {
+  color: #1fa859 !important;
+  font-size: 18px !important;
+  gap: 10px !important;
+}
+.Toastify__toast-icon {
+  width: 30px !important;
+}
+.Toastify__close-button {
+  color: #fff !important;
+  width: 100% !important;
+}
+.Toastify__close-button--light {
+  opacity: 1 !important;
+  width: 20px !important;
+}
+.Toastify__close-button > svg {
+  height: 25px !important;
+  width: 25px !important;
+}
+.Toastify__toast-container--top-center {
+  top: 1rem !important;
+}
