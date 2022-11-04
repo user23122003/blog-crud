@@ -13,7 +13,7 @@ const Banner = () => {
           </h1>
           <h6
             className="md:max-w-[600px] sm:w-full md:text-sm text:xs leading-6 my-4 
-          text-primary"
+          text-primary font-bold"
           >
             Những năm 1980, khi mô hình hợp tác xã không tạo ra sự cạnh tranh,
             các nhà máy hoạt động kiểu bao cấp khó phát triển, Việt Nam bắt đầu

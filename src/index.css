@@ -16,7 +16,8 @@
 }
 body {
   line-height: 1.5;
-  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   background-color: var(--bg-primary);
   color: var(--text-color);
@@ -48,9 +49,9 @@ h6 {
   --text-blue: #1363ef;
   --text-color: #fff;
   --text-gray: #19191f;
-  --bg-primary: #19191f;
-  --bg-secondary: #212429;
-  --bg-dark: #000;
+  --bg-primary: #1d1d42;
+  --bg-secondary: #26264e;
+  --bg-dark: #1d1d42;
   --bg-green: #1fa859;
   --bg-red: #dc2626;
   --bg-organ: #f97316;
