@@ -8,10 +8,6 @@ const LinkItem = [
     url: "/#",
     title: "Home",
   },
-  {
-    url: "/contact",
-    title: "Contact",
-  },
 ];
 const Header = () => {
   const { userInfo } = useAuth();
@@ -31,6 +27,7 @@ const Header = () => {
               <li>{item.title}</li>
             </NavLink>
           ))}
+          <a href="https://tranquangngoc.vercel.app/">Contact</a>
           {userInfo ? (
             <NavLink className="flex" to="/post">
               <li>Dashboard</li>
